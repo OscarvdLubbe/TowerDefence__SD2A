@@ -2,8 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - -HP block
+  - TowerSpawn_1
+  - TowerSpawn_2
+  - TowerSpawn_3
+  - TowerSpawn_4
+  - TowerSpawn_5
+  - TowerSpawn_6
   layers:
   - Default
   - TransparentFX
@@ -41,3 +48,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  m_RenderingLayers:
+  - Default
+  m_MigratedRenderPipelines: []
