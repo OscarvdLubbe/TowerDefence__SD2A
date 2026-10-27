@@ -7,9 +7,19 @@ public class TowerShoot : MonoBehaviour
     public GameObject FishBullet_1;
     public float speed = 16f;
     private float attackTimer = 0f;
+    private int i;
+    void OnEnable()
+    {
+        EnemyList.EnemyList_The1 += EnemyList_;
+    }
+    void OnDisable()
+    {
+        EnemyList.EnemyList_The1 -= EnemyList_;
+    }
     void Update()
-    { 
+    {
         attackTimer += Time.deltaTime;
+        enemys.RemoveAll(enemy => enemy == null);
         if (enemys == null || enemys.Count <= 0)
         {
             //idle animtation
@@ -24,7 +34,7 @@ public class TowerShoot : MonoBehaviour
             {
                 attackTimer = 0f;
                 GameObject spawnFishAttack = Instantiate(FishBullet_1, transform.position, Quaternion.identity);
-                spawnFishAttack.GetComponent<FishAttack_1>().Initialize(enemys[0].transform);
+                spawnFishAttack.GetComponent<FishAttack_1>().Initialize(WhatEnemyIsTheClosest().transform);
             }
         }
         if (gameObject.tag == "BaseTower_2")
@@ -35,26 +45,51 @@ public class TowerShoot : MonoBehaviour
             {
                 attackTimer = 0f;
                 GameObject spawnFishAttack = Instantiate(FishBullet_1, transform.position, Quaternion.identity);
-                spawnFishAttack.GetComponent<FishAttack_1>().Initialize(enemys[0].transform);
+                spawnFishAttack.GetComponent<FishAttack_1>().Initialize(WhatEnemyIsTheClosest().transform);
             }
         }
-
-        Vector3 direction = enemys[0].transform.position - transform.position;
+        Vector3 direction = WhatEnemyIsTheClosest().transform.position - transform.position;
         transform.right = -direction.normalized;
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    public void EnemyList_(GameObject enemy)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            enemys.Add(collision.gameObject);
-            //een for loop gebruiken.
-        }
+        enemys.Add(enemy);
     }
-    void OnTriggerExit2D(Collider2D collision)
+
+    public GameObject WhatEnemyIsTheClosest()
     {
-        if (collision.CompareTag("Enemy"))
+        GameObject closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject enemy in enemys)
         {
-            enemys.Remove(collision.gameObject);
+            if (enemy == null)
+            {
+                continue;
+            }
+            float distance = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemy;
+            }
         }
+        return closestEnemy;
     }
+
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("Enemy"))
+    //     {
+    //         enemys.Add(collision.gameObject);
+    //         //een for loop gebruiken.
+    //     }
+    // }
+    // void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("Enemy"))
+    //     {
+    //         enemys.Remove(collision.gameObject);
+    //     }
+    // }
 }

@@ -117,8 +117,11 @@ MonoBehaviour:
   - {fileID: 0}
   path2:
   - {fileID: 0}
-  speed: 5.03
-  health: 100
+  path3: []
+  path4: []
+  path5: []
+  speed: 3
+  health: 5
 --- !u!61 &7978283747151717668
 BoxCollider2D:
   m_ObjectHideFlags: 0

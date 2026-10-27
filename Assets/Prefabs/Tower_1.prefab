@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 3380218917729484407}
   - component: {fileID: 2534030477249647472}
   - component: {fileID: 7485687291283553251}
-  - component: {fileID: 5672876696349565176}
-  - component: {fileID: 7464689404503198660}
   - component: {fileID: -178185534153327879}
   - component: {fileID: 3267939714563783336}
   m_Layer: 0
@@ -112,58 +110,6 @@ MonoBehaviour:
   enemys: []
   FishBullet_1: {fileID: 5942562989319299411, guid: 0d47a80f6a8a08146b2d661ee7883db1, type: 3}
   speed: 40
---- !u!114 &5672876696349565176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2287359649694194971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b0fc65c5b52ae4ea5aae6eae8128c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerDirectionToEnmey
-  enemys: []
-  enemy_1: {fileID: 9175581179123209026, guid: 2deb0dec5c6454c4ab444e998dcc80fd, type: 3}
-  enemy_2: {fileID: 9175581179123209026, guid: 1877b36a0f36aab4db265ca05757ad19, type: 3}
-  speed: 7
---- !u!58 &7464689404503198660
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2287359649694194971}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_Radius: 29.6
 --- !u!114 &-178185534153327879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerUpgrade
   UpgardeMenuTower_1: {fileID: 872130583961391055, guid: 012d27e6a248e2e498bf905f05fd75eb, type: 3}
-  UpgardeMenuTower_2: {fileID: 0}
-  UpgardeMenuTower_3: {fileID: 0}
 --- !u!114 &3267939714563783336
 MonoBehaviour:
   m_ObjectHideFlags: 0

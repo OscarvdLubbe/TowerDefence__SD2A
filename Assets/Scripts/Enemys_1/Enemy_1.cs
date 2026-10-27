@@ -12,7 +12,7 @@ public class Enemy_1 : MonoBehaviour
     [SerializeField] private Transform[] path3;
     [SerializeField] private Transform[] path4;
     [SerializeField] private Transform[] path5;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 1f;
     [SerializeField] private float health = 10f;
     private int currentTarget = 0;
 

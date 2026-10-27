@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class TowerspawnUI : MonoBehaviour
 {
     public static event Action SpawnTower_1;
+    public static event Action SpawnTower_2;
     [Header("diffirent types of placable Towers")]
     public GameObject Tower_1;
     public GameObject Tower_2;
@@ -28,8 +29,6 @@ public class TowerspawnUI : MonoBehaviour
     [Header("UI")]
     public GameObject towerSpawnUI;
 
-    private bool Place3InUse = false;
-
     void OnEnable()
     {
         TowerSpawnScript.WereToPlaceTower_1 += SpawnPoint_1;
@@ -50,24 +49,18 @@ public class TowerspawnUI : MonoBehaviour
     }
     public void spawnTower_1()
     {
-            Instantiate(Tower_1, TowerLocations[i].transform.position, quaternion.identity);
-            //SpawnLocation[j].SetActive(false);
-            towerSpawnUI.SetActive(false);
-            SpawnTower_1?.Invoke();
-            //chosenTower.SetActive(false);
+        Instantiate(Tower_1, TowerLocations[i].transform.position, quaternion.identity);
+        SpawnLocation[j].SetActive(false);
+        towerSpawnUI.SetActive(false);
+        SpawnTower_1?.Invoke();
     }
     public void spawnTower_2()
     {
         Instantiate(Tower_2, TowerLocations[i].transform.position, quaternion.identity);
-        //SpawnLocation[j].SetActive(false);
+        SpawnLocation[j].SetActive(false);
         towerSpawnUI.SetActive(false);
+        SpawnTower_2.Invoke();
     }
-
-    public void UpgradeTower_1()
-    {
-        //UpgardeUI.SetActive(true);
-    }
-
     public void SpawnPoint_1()
     {
         i = 0;

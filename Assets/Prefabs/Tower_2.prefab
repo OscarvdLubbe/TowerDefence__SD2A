@@ -108,9 +108,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerShoot
   enemys: []
   FishBullet_1: {fileID: 5942562989319299411, guid: 0d47a80f6a8a08146b2d661ee7883db1, type: 3}
-  Tower_1_LV: 0
-  Tower_2_LV: 0
-  Tower_3_LV: 0
   speed: 24
 --- !u!58 &-2535779300688018852
 CircleCollider2D:
@@ -119,7 +116,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185661299532409895}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

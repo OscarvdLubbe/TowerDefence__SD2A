@@ -5,7 +5,7 @@ public class Enemy_2 : MonoBehaviour
 {
     public static event Action Enemy_2_Dead;
     [SerializeField] private Transform[] path;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 3f;
     [SerializeField] private float health = 5f;
     private int currentTarget = 0;
 
