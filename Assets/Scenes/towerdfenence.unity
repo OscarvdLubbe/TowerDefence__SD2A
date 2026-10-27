@@ -396,11 +396,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9094857260196239, guid: 074243ace37078b4a8854705c9717c21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7761097
+      value: -6.73
       objectReference: {fileID: 0}
     - target: {fileID: 9094857260196239, guid: 074243ace37078b4a8854705c9717c21, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5882032
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 9094857260196239, guid: 074243ace37078b4a8854705c9717c21, type: 3}
       propertyPath: m_LocalPosition.z
@@ -434,9 +434,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4914032430513574434, guid: 074243ace37078b4a8854705c9717c21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e839f0458eee0048bfb70d395c8cbf9, type: 3}
+    - target: {fileID: 4914032430513574434, guid: 074243ace37078b4a8854705c9717c21, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914032430513574434, guid: 074243ace37078b4a8854705c9717c21, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914032430513574434, guid: 074243ace37078b4a8854705c9717c21, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7262916907392869218, guid: 074243ace37078b4a8854705c9717c21, type: 3}
       propertyPath: m_Name
       value: TestTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262916907392869218, guid: 074243ace37078b4a8854705c9717c21, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -445,6 +465,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7262916907392869218, guid: 074243ace37078b4a8854705c9717c21, type: 3}
       insertIndex: -1
       addedObject: {fileID: 281828552}
+    - targetCorrespondingSourceObject: {fileID: 7262916907392869218, guid: 074243ace37078b4a8854705c9717c21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 281828553}
   m_SourcePrefab: {fileID: 100100000, guid: 074243ace37078b4a8854705c9717c21, type: 3}
 --- !u!1 &281828551 stripped
 GameObject:
@@ -463,6 +486,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b0fc65c5b52ae4ea5aae6eae8128c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerDirectionToEnmey
+  enemys: []
+  enemy_1: {fileID: 9175581179123209026, guid: 2deb0dec5c6454c4ab444e998dcc80fd, type: 3}
+  enemy_2: {fileID: 9175581179123209026, guid: 1877b36a0f36aab4db265ca05757ad19, type: 3}
+  C2D: {fileID: 0}
+  speed: 7
+--- !u!58 &281828553
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281828551}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.21133333}
+  m_Radius: 2.09
 --- !u!1001 &319997729
 PrefabInstance:
   m_ObjectHideFlags: 0

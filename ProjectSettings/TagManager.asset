@@ -11,6 +11,11 @@ TagManager:
   - TowerSpawn_4
   - TowerSpawn_5
   - TowerSpawn_6
+  - Enemy
+  - Bullet
+  - BaseTower_1
+  - BaseTower_2
+  - EnemyList
   layers:
   - Default
   - TransparentFX

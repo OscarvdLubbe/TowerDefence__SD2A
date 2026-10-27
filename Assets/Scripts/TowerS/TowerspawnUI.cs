@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.Rendering;
 
 public class TowerspawnUI : MonoBehaviour
 {
+    public static event Action SpawnTower_1;
     [Header("diffirent types of placable Towers")]
     public GameObject Tower_1;
     public GameObject Tower_2;
@@ -24,7 +26,9 @@ public class TowerspawnUI : MonoBehaviour
     private int j;
 
     [Header("UI")]
-    public GameObject towerSpawnUI_1;
+    public GameObject towerSpawnUI;
+
+    private bool Place3InUse = false;
 
     void OnEnable()
     {
@@ -33,7 +37,7 @@ public class TowerspawnUI : MonoBehaviour
         TowerSpawnScript.WereToPlaceTower_3 += SpawnPoint_3;
         TowerSpawnScript.WereToPlaceTower_4 += SpawnPoint_4;
         TowerSpawnScript.WereToPlaceTower_5 += SpawnPoint_5;
-        TowerSpawnScript.WereToPlaceTower_6 += SpawnPoint_6;
+        //TowerSpawnScript.WereToPlaceTower_6 += SpawnPoint_6;
     }
     void OnDisable()
     {
@@ -42,20 +46,26 @@ public class TowerspawnUI : MonoBehaviour
         TowerSpawnScript.WereToPlaceTower_3 -= SpawnPoint_3;
         TowerSpawnScript.WereToPlaceTower_4 -= SpawnPoint_4;
         TowerSpawnScript.WereToPlaceTower_5 -= SpawnPoint_5;
-        TowerSpawnScript.WereToPlaceTower_6 -= SpawnPoint_6;
+        //TowerSpawnScript.WereToPlaceTower_6 -= SpawnPoint_6;
     }
     public void spawnTower_1()
     {
-        Instantiate(Tower_1, TowerLocations[i].transform.position, quaternion.identity);
-        SpawnLocation[j].SetActive(false);
-        towerSpawnUI_1.SetActive(false);
-        //chosenTower.SetActive(false);
+            Instantiate(Tower_1, TowerLocations[i].transform.position, quaternion.identity);
+            //SpawnLocation[j].SetActive(false);
+            towerSpawnUI.SetActive(false);
+            SpawnTower_1?.Invoke();
+            //chosenTower.SetActive(false);
     }
     public void spawnTower_2()
     {
         Instantiate(Tower_2, TowerLocations[i].transform.position, quaternion.identity);
-        SpawnLocation[j].SetActive(false);
-        towerSpawnUI_1.SetActive(false);
+        //SpawnLocation[j].SetActive(false);
+        towerSpawnUI.SetActive(false);
+    }
+
+    public void UpgradeTower_1()
+    {
+        //UpgardeUI.SetActive(true);
     }
 
     public void SpawnPoint_1()
